@@ -21,7 +21,7 @@ The host environment needs to have the following software packages:
 2. Run the Replit Keep Alive wrapper around another script.
 
     ```
-    python replit_keep_alive.py <script>
+    poetry run replit_keep_alive.py <script>
     ```
 
 ### Incorporating Replit Keep Alive into another software module
