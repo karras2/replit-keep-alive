@@ -1,0 +1,2 @@
+run = "python replit_keep_alive.py <script>"
+language = "python"
