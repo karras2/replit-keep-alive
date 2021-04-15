@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Imports
 import logging
 import subprocess
