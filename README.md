@@ -6,7 +6,13 @@ Replit Keep Alive is a Python script wrapper meant to, with the help of [UptimeR
 ## Installation
 The host environment needs to have the following software packages:
 
-* [Latest Replit Keep Alive source code](https://github.com/erickyeagle/replit-keep-alive/releases)
+* Latest Replit Keep Alive source code
+	* [Download a release package](https://github.com/erickyeagle/replit-keep-alive/releases)
+	* Clone the repository via Git
+
+		```
+		git clone https://github.com/erickyeagle/replit-keep-alive.git
+		```
 * [Python 3.5+](https://www.python.org/downloads)
 
 ## Usage
