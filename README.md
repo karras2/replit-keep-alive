@@ -8,13 +8,17 @@ The host environment needs to have the following software packages:
 
 * [Latest Replit Keep Alive source code](https://github.com/erickyeagle/replit-keep-alive/releases)
 * [Python 3.5+](https://www.python.org/downloads)
-* [Poetry](https://python-poetry.org)
 
 ## Usage
 ### Keeping a script alive without modification of the script
-1. Copy all source code files to the host environment.
+1. Copy `requirements.txt` and everything in `/src` to the host environment.
 2. Modify `.replit` by replacing `<script>` with the target script file.
 3. Configure [UptimeRobot](https://uptimerobot.com) to point to your web server.
+4. Install dependencies.
+
+	```
+	pip install -r requirements.txt
+	```
 
 ### Incorporating Replit Keep Alive into another software module
 1. Copy all source code files (except for `.replit` as this will interfere with Replit's normal run process) to the host environment.
