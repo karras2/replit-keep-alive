@@ -1,4 +1,6 @@
 [![](https://img.shields.io/github/v/release/erickyeagle/replit-keep-alive)](https://github.com/erickyeagle/replit-keep-alive/releases)
+[![](https://img.shields.io/github/v/tag/erickyeagle/replit-keep-alive)](https://github.com/erickyeagle/replit-keep-alive/tags)
+![](https://img.shields.io/github/downloads/erickyeagle/replit-keep-alive/total)
 
 # Replit Keep Alive
 Replit Keep Alive is a Python script wrapper meant to, with the help of [UptimeRobot](https://uptimerobot.com), keep [Replit](https://replit.com) from terminating a Python script when the browser tab is closed.
