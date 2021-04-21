@@ -1,36 +1,38 @@
 #!/usr/bin/env python
+"""
+Replit Keep Alive is a Python script wrapper meant to, with the help of UptimeRobot, keep Replit
+from terminating the bot when the browser tab is closed.
+"""
 
-# Imports
 import logging
 import subprocess
 import sys
-from flask import Flask
 from threading import Thread
 
-# Initializes the Flask web server.
-flask: Flask = Flask('replit_keep_alive')
+from flask import Flask
 
-# Initializes the Logger.
-log: logging.Logger = logging.getLogger('werkzeug')
+SYNTAX                        = 'Syntax: python {0} <script>'
+WEB_SERVER_KEEP_ALIVE_MESSAGE = 'Keeping the repl alive!'
 
-# Method for handling the base route of '/'.
+flask: Flask          = Flask('replit_keep_alive')
+log:   logging.Logger = logging.getLogger('werkzeug')
+
 @flask.route('/')
 def index() -> str:
-    return 'Keeping the repl alive!'
+    """ Method for handling the base route of '/'. """
+    return WEB_SERVER_KEEP_ALIVE_MESSAGE
 
-# Wraps the web server run() method in a Thread object and starts the web server.
 def keep_alive() -> None:
+    """ Wraps the web server run() method in a Thread object and starts the web server. """
     def run() -> None:
         log.setLevel(logging.ERROR)
         flask.run(host = '0.0.0.0', port = 8080)
     thread = Thread(target = run)
     thread.start()
 
-# The "main" method essentially. The body of this conditional is executed when this script is
-# executed as the main module (ie. not imported by another module)
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print('Error: when executing this script as the main module, you need to pass in the name of the script to keep alive as the first argument. This script may also be imported by another module and used by calling the "keep_alive()" method.', file = sys.stderr)
+        print(SYNTAX.format(sys.argv[0]), file = sys.stderr)
     else:
         keep_alive()
         subprocess.call(['python', sys.argv[1]])
