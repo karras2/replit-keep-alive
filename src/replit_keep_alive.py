@@ -15,12 +15,12 @@ log: logging.Logger = logging.getLogger('werkzeug')
 
 # Method for handling the base route of '/'.
 @flask.route('/')
-def index():
+def index() -> str:
     return 'Keeping the repl alive!'
 
 # Wraps the web server run() method in a Thread object and starts the web server.
-def keep_alive():
-    def run():
+def keep_alive() -> None:
+    def run() -> None:
         log.setLevel(logging.ERROR)
         flask.run(host = '0.0.0.0', port = 8080)
     thread = Thread(target = run)
